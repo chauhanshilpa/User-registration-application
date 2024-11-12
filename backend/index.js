@@ -12,8 +12,9 @@ app.use(bodyParser.json());
 let usersList = [...userList];
 
 app.post("/user", async (req, res) => {
-  const { name, dateOfBirth, email } = req.body;
+  let { name, dateOfBirth, email } = req.body;
   let userId = uuidv4();
+  dateOfBirth = dateOfBirth ? dateOfBirth : new Date().toLocaleDateString();
   let user = {
     id: userId,
     name,

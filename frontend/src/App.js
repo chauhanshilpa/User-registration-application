@@ -8,9 +8,9 @@ import {
 } from "./api";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import UsersTable from "./components/UsersTable";
+import CardList from "./components/CardList";
 import Form from "./components/Form";
-import { IoMdPersonAdd } from "react-icons/io";
+import addAUser from "./assets/add-user.svg";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -119,15 +119,18 @@ const App = () => {
         <Typography variant="h1" className="app-name">
           User Management
         </Typography>
-        <IoMdPersonAdd
+        <img
+          src={addAUser}
+          alt="add new user icon"
+          width={40}
+          height={40}
+          className="icon add-user-icon"
           onClick={() => {
             setIsCreateNewUserIconClicked(true);
             setIsEditUserIconClicked(false);
           }}
-          className="icon add-user-icon"
-          style={{ cursor: "pointer" }}
         />
-        <UsersTable
+        <CardList
           users={users}
           deleteUser={deleteUser}
           setEditingUser={setEditingUser}
