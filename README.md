@@ -1,4 +1,7 @@
 # user management app
+This is the user management app where you can view list of users, edit their details, delete a user.
+
+This has separate frontend in ReactJS and backend in express.js
 
 ## How to run the application?
 
